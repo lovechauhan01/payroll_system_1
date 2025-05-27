@@ -1,0 +1,60 @@
+// Base class
+class Employee {
+    protected String name;
+    protected int experience; // in years
+  
+    public Employee(String name, int experience) {
+        this.name = name;
+        this.experience = experience;
+    }
+  
+    public double calculateSalary() {
+        // Base salary for general employee
+        return 30000 + (experience * 1000);
+    }
+  
+    public void displaySalary() {
+        System.out.println(name + "'s salary: $" + calculateSalary());
+    }
+  }
+  
+  // Subclass - Developer
+  class Developer extends Employee {
+  
+    public Developer(String name, int experience) {
+        super(name, experience);
+    }
+  
+    @Override
+    public double calculateSalary() {
+        // Developers earn a higher base + experience factor
+        return 50000 + (experience * 2000);
+    }
+  }
+  
+  // Subclass - Manager
+  class Manager extends Employee {
+  
+    public Manager(String name, int experience) {
+        super(name, experience);
+    }
+  
+    @Override
+    public double calculateSalary() {
+        // Managers earn more than developers
+        return 60000 + (experience * 2500);
+    }
+  }
+  
+  // Main class
+  public class PayrollSystem {
+    public static void main(String[] args) {
+        Employee emp1 = new Developer("Alice", 3);
+        Employee emp2 = new Manager("Bob", 5);
+        Employee emp3 = new Employee("Charlie", 2);
+  
+        emp1.displaySalary();
+        emp2.displaySalary();
+        emp3.displaySalary();
+    }
+  }
