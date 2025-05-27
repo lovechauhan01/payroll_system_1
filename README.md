@@ -14,6 +14,7 @@ A simple Java-based payroll system demonstrating **inheritance** and **polymorph
 - **Polymorphism**:  
   Demonstrates runtime method overriding for calculating salaries based on the actual object type.
 
+File Structure
 PayrollSystem/
 ├── src/
 │   ├── Employee.java
